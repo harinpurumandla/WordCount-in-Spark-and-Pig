@@ -1,0 +1,5 @@
+A = sc.textFile ("./input.txt")
+B = A.flatMap(lambda line: line.split(" "))
+C = B.map(lambda word : (word, 1))
+D = C.reduceByKey(lambda a, b: a+b)
+D.saveAsTextFile("./output")
